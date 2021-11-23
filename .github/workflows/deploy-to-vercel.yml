@@ -2,15 +2,15 @@ name: Deploy to vercel
 
 on:
   push:
-    branches:
-      - main
+    # branches:
+    #   - main
     tags:
       - "**"
-  pull_request:
-    branches:
-      - main
-    tags:
-      - "**"
+  # pull_request:
+  #   branches:
+  #     - main
+  #   tags:
+  #     - "**"
 
 jobs:
   deploy:
