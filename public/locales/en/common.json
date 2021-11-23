@@ -1,5 +1,8 @@
 {
-    "index":{
-        "title":"Hello! 👋"
+    "index": {
+        "title": "Hello! 👋"
+    },
+    "about": {
+        "title": "About! 😊 "
     }
 }
