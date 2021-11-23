@@ -1,8 +1,18 @@
 {
+    "global": {
+        "title": "Example for next-i18next "
+    },
     "index": {
         "title": "Hello! 👋"
     },
     "about": {
-        "title": "About! 😊 "
+        "title": "About 😊 "
+    },
+    "debug": {
+        "title": "Debug"
+    },
+    "navigator": {
+        "link": "Using Link component",
+        "router": "Using Router"
     }
 }
