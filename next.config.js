@@ -1,2 +1,11 @@
+const { i18n } = require('./next-i18next.config');
 
-exports = {};
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
+    /* config options here */
+    i18n,
+};
+
+module.exports = nextConfig;
