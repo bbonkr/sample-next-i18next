@@ -5,25 +5,25 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Layout from '../components/common/Layout';
 
-const HomePage = () => {
-    const { t } = useTranslation('common');
+const AboutPage = () => {
+    const { t } = useTranslation();
     const router = useRouter();
 
     const handleClickNavigate = useCallback(() => {
-        router.push('/about');
+        router.push('/');
     }, []);
 
     return (
         <Layout>
-            <h1>{t('index.title')}</h1>
+            <h1>{t('about.title')}</h1>
             <hr />
             <div>
-                <Link href="/about">
-                    <a>{t('about.title')}</a>
+                <Link href="/">
+                    <a>{t('index.title')}</a>
                 </Link>
                 <span> | </span>
                 <button onClick={handleClickNavigate}>
-                    {t('about.title')}
+                    {t('index.title')}
                 </button>
             </div>
         </Layout>
@@ -36,4 +36,4 @@ export const getStaticProps = async ({ locale }) => ({
     },
 });
 
-export default HomePage;
+export default AboutPage;
