@@ -1,0 +1,27 @@
+{
+  "name": "sample-next-i18next",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Pon Cheol Ku <dev@bbon.kr> (http://bbon.kr/)",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/react": "^17.0.36",
+    "@types/react-dom": "^17.0.11",
+    "eslint-config-prettier": "^8.3.0",
+    "typescript": "^4.5.2"
+  },
+  "dependencies": {
+    "next": "^12.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

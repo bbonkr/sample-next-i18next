@@ -1,0 +1,1 @@
+# Example for next-i18next
