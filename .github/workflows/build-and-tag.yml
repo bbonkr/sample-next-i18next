@@ -1,0 +1,53 @@
+name: Build and tag
+
+on:
+  push:
+    branches:
+      - main # Default release branch
+    tags:
+      - "!*"
+
+jobs:
+  build:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+      - name: install dependencies
+        run: npm install
+      - name: lint
+        run: npm run lint
+      - name: build
+        env:
+          NODE_ENV: production
+        run: npm run build
+
+      - name: get version
+        id: get_package_version
+        run: echo "::set-output name=version::$(node -p -e "require('./package.json').version")"
+      - name: set version 
+        run: echo "PACKAGE_VERSION=${{ steps.get_package_version.outputs.version }}" >> $GITHUB_ENV 
+
+      - name: package-version-to-git-tag
+        uses: pkgdeps/git-tag-action@v2
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          github_repo: ${{ github.repository }}
+          version: ${{ env.PACKAGE_VERSION }}
+          git_commit_sha: ${{ github.sha }}
+          git_tag_prefix: "v"
+      - name: Release Drafter
+        id: release_drafter
+        uses: release-drafter/release-drafter@v5
+        with:
+          config-name: release-drafter.yml
+          version: ${{ env.PACKAGE_VERSION }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
