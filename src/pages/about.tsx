@@ -3,15 +3,15 @@ import { useTranslation } from 'next-i18next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 
-const HomePage = () => {
-    const { t } = useTranslation('common');
+const AboutPage = () => {
+    const { t } = useTranslation();
     return (
         <div>
-            <h1>{t('index.title')}</h1>
+            <h1>{t('about.title')}</h1>
             <hr />
             <div>
-                <Link href="/about">
-                    <a>{t('about.title')}</a>
+                <Link href="/">
+                    <a>{t('index.title')}</a>
                 </Link>
             </div>
         </div>
@@ -24,4 +24,4 @@ export const getStaticProps = async ({ locale }) => ({
     },
 });
 
-export default HomePage;
+export default AboutPage;
