@@ -4,6 +4,8 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import Layout from '../components/common/Layout';
+import Content from '../components/Content';
+import Navigator from '../components/Navigator';
 
 const HomePage = () => {
     const { t } = useTranslation('common');
@@ -15,17 +17,13 @@ const HomePage = () => {
 
     return (
         <Layout>
-            <h1>{t('index.title')}</h1>
+            <Content title={t('index.title')} />
             <hr />
-            <div>
-                <Link href="/about">
-                    <a>{t('about.title')}</a>
-                </Link>
-                <span> | </span>
-                <button onClick={handleClickNavigate}>
-                    {t('about.title')}
-                </button>
-            </div>
+            <Navigator
+                href="/about"
+                label={t('about.title')}
+                onClick={handleClickNavigate}
+            />
         </Layout>
     );
 };

@@ -3,13 +3,14 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 
 const Debug = () => {
-    const { i18n } = useTranslation();
+    const { i18n, t } = useTranslation();
     const router = useRouter();
     return (
-        <div>
-            <h3>Debug</h3>
+        <div className="flex flex-col">
+            <h3 className="text-lg">{t('debug.title')}</h3>
+            <hr className="my-1 border-0" />
 
-            <pre>
+            <pre className="bg-gray-600 rounded-md p-6 text-gray-50">
                 {JSON.stringify(
                     {
                         language: i18n.language,

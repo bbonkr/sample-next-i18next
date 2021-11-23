@@ -1,8 +1,18 @@
 {
+    "global": {
+        "title": "next-i18next 예제"
+    },
     "index": {
         "title": "안녕하세요! 👋"
     },
     "about": {
         "title": "소개합니다! 😊 "
+    },
+    "debug": {
+        "title": "디버그"
+    },
+    "navigator": {
+        "link": "Link 컴포넌트 사용",
+        "router": "Router 사용"
     }
 }
