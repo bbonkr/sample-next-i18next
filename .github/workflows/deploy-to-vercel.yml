@@ -2,8 +2,13 @@ name: Deploy to vercel
 
 on:
   push:
-    # branches:
-    #   - main # Default release branch
+    branches:
+      - main
+    tags:
+      - "**"
+  pull_request:
+    branches:
+      - main
     tags:
       - "**"
 
