@@ -17,3 +17,5 @@ $ npm run dev
 ## Navigate http://localhost:3000
 
 See web app :)
+
+[Please see commentary (ko-KR only, sorry for that)](./manual.md)
