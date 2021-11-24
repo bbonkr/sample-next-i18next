@@ -33,14 +33,6 @@ jobs:
         env:
           NODE_ENV: production
         run: npm run build
-      - name: deploy to Vercel
-        env:
-          NODE_ENV: production
-          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-        run: |
-          npx vercel --token ${VERCEL_TOKEN}
 
       - name: get version
         id: get_package_version
