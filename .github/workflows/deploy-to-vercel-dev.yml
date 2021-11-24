@@ -1,16 +1,11 @@
-name: Deploy to vercel
+name: Deploy to vercel (Development)
 
 on:
   push:
-    # branches:
-    #   - main
+    branches:
+      - dev
     tags:
-      - "**"
-  # pull_request:
-  #   branches:
-  #     - main
-  #   tags:
-  #     - "**"
+      - "!*"
 
 jobs:
   deploy:
@@ -37,9 +32,4 @@ jobs:
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
         run: |
-          prodRun=""
-          if [[ ${GITHUB_REF} == "refs/heads/main" ]]; then
-            prodRun="--prod"
-          fi
-
-          npx vercel --token ${VERCEL_TOKEN} $prodRun
+          npx vercel --token ${VERCEL_TOKEN}
