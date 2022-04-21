@@ -5,7 +5,11 @@ import styles from './RouteIndicator.module.css';
 
 const DONE_DURATION = 250;
 
-export default function RouteIndicator() {
+const RouteIndicator = () => {
+    const cssVariables: React.CSSProperties & { [key: string]: string } = {
+        '--RouteIndicator-done-duration': `${DONE_DURATION}ms`,
+    };
+
     const router = useRouter();
 
     const [loading, setLoading] = React.useState<boolean | null>(null);
@@ -50,7 +54,9 @@ export default function RouteIndicator() {
                 styles.indicator,
                 loading !== null && (loading ? styles.loading : styles.done),
             )}
-            style={{ '--RouteIndicator-done-duration': `${DONE_DURATION}ms` }}
+            style={{ ...cssVariables }}
         />
     );
-}
+};
+
+export default RouteIndicator;
