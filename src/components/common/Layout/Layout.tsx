@@ -6,14 +6,16 @@ type MainProps = {};
 
 const Layout = ({ children }: React.PropsWithChildren<MainProps>) => {
     return (
-        <div>
-            <Header />
-            <main className="container mx-auto flex flex-col pt-3 justify-between">
-                {children}
-                <hr />
-                <Debug />
-            </main>
-        </div>
+        <React.Fragment>
+            <div>
+                <Header />
+                <main className="container mx-auto flex flex-col pt-3 justify-between">
+                    {children}
+                    <hr />
+                    <Debug />
+                </main>
+            </div>
+        </React.Fragment>
     );
 };
 
