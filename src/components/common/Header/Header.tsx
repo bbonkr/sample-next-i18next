@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useMemo } from 'react';
+import React, { useCallback, useMemo } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
@@ -52,13 +52,15 @@ const Header = () => {
         [],
     );
 
+    const titleTranslated = t('global.title');
+
     return (
         <header className="bg-gray-800 ">
             <nav className="container mx-auto flex justify-between px-6 py-3">
                 <div className="flex justify-start items-center">
                     <p className="text-lg text-gray-300 shadow-sm">
                         <Link href="/">
-                            <a>{t('global.title')}</a>
+                            <a>{titleTranslated}</a>
                         </Link>
                     </p>
                 </div>
