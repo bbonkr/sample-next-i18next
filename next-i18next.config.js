@@ -2,7 +2,7 @@ const config = {
     i18n: {
         defaultLocale: 'ko',
         locales: ['ko', 'en', 'ru'],
-        defaultNS: 'common',
+        // defaultNS: 'common',
         localeDetection: false,
     },
 };
